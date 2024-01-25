@@ -1,3 +1,5 @@
+//Solución punto 1.
+
 async function obtenerDatosPokemon(nombrePokemon) {
 try {
     let apiUrl = `https://pokeapi.co/api/v2/pokemon/${nombrePokemon.toLowerCase()}`;
@@ -10,7 +12,7 @@ try {
 
     const dato = await respuesta.json();
 
-    return (dato);
+    return dato;
     
 } catch (error) {
     console.error(error);
@@ -77,11 +79,11 @@ async function obtenerListaPokemones() {
 }
 
 async function obtenerDatosPorNombre() {
-    let nombrePokemon = "ivysaur";
+    let nombrePokemon = "burmy";
 
     try {
         let datosPokemon = await obtenerDatosPokemon(nombrePokemon);
-        console.log("Datos del pokemon: ", datosPokemon);
+        console.log(`Datos del pokemon: ${nombrePokemon}`, datosPokemon);
 
         await obtenerHabilidades(nombrePokemon);
         await obtenerDatosPorTipo(nombrePokemon);
